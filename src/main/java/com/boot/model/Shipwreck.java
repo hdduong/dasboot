@@ -1,17 +1,26 @@
 package com.boot.model;
 
+import javax.persistence.*;
+
 /**
  * Created by HienD on 4/8/2017.
  */
+@Entity
 public class Shipwreck {
-    Long id;
-    String name;
-    String description;
-    String condition;
-    Integer depth;
-    Double latitude;
-    Double longitude;
-    Integer yearDiscovered;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
+    @Version
+    private Long version;
+
+    private String name;
+    private String description;
+    private String condition;
+    private Integer depth;
+    private Double latitude;
+    private Double longitude;
+    private Integer yearDiscovered;
 
     public Shipwreck() { }
 
